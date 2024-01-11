@@ -2,21 +2,16 @@
 #include "Header.h"
 using namespace std;
 
-MyClass::MyClass()
+void Birthday::printDate()
 {
-	cout << "Constructor" << endl;
-}
-
-MyClass::~MyClass()
-{
-	cout << "Destructor" << endl;
+	cout << day << "/" << month << "/"  << year << endl;
 }
 
 int main()
 {
 	setlocale(LC_ALL, "Ru");
-	MyClass q;
-
+	Birthday Jim(01, 02, 03);
+	Jim.printDate();
 	return 0;
 }
 
