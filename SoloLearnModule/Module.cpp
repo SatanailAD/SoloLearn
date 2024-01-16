@@ -1,34 +1,35 @@
 #include <iostream>
-#include "Header.h"
-#include <string>
-using namespace std;
 
-void Birthday::printDate()
-{
-	cout << day << "/" << month << "/"  << year << endl;
+class FriendClass {
+private:
+    int privateData;
+
+public:
+    FriendClass() : privateData(0) {}
+
+    
+    // Дружественная функция
+    friend void friendFunction(FriendClass obj);
+
+    // Дружественный класс
+    friend class AnotherFriendClass;
+};
+
+// Дружественная функция
+void friendFunction(FriendClass obj) {
+    std::cout << "Private data: " << obj.privateData << std::endl;
 }
 
-class Person {
+// Дружественный класс
+class AnotherFriendClass {
 public:
-	Person(string n, Birthday b) : name(n), bd(b)
-	{
-	}
-	void printInfo()
-	{
-		cout << name << endl;
-		bd.printDate();
-	}
-private:
-	string name;
-	Birthday bd;
+    void accessPrivateData(FriendClass obj) {
+        // Дружественный класс имеет доступ к закрытым членам
+        std::cout << "Private data from AnotherFriendClass: " << obj.privateData << std::endl;
+    }
 };
 
 int main()
 {
-	setlocale(LC_ALL, "Ru");
-	Birthday bd(2, 21, 1985);
-	Person p("David", bd);
-	p.printInfo();
-	return 0;
+    
 }
-
