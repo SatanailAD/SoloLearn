@@ -1,19 +1,20 @@
-
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string myString = "Hello, World!";
+    std::string myString;
+    std::cin >> myString;
 
-    // Получаем указатель на массив символов
-    const char* charArray = myString.c_str();
+    char charArray[myString.length() + 1];
 
-    // Выводим содержимое массива символов
-    std::cout << charArray[0] << std::endl;
+    std::copy(myString.begin(), myString.end(), charArray);
+
+    charArray[myString.length()] = '\0';
+
+    std::cout << charArray << std::endl;
 
     return 0;
 }
-
 
 
 /*
