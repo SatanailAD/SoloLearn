@@ -1,5 +1,22 @@
-#include <iostream>
 
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string myString = "Hello, World!";
+
+    // Получаем указатель на массив символов
+    const char* charArray = myString.c_str();
+
+    // Выводим содержимое массива символов
+    std::cout << charArray[0] << std::endl;
+
+    return 0;
+}
+
+
+
+/*
 class FriendClass {
 private:
     int privateData;
@@ -33,3 +50,5 @@ int main()
 {
     
 }
+
+*/
