@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-//Дана строка. Выведите в консоль длину этой строки.
+//Дана строка. Выведите в консоль последний символ строки.
 
 int main() {
     
@@ -10,6 +10,9 @@ int main() {
     cout << "Enter ur message: ";
     cin >> task;
     cout << task.length() << endl;
+    char last = task[task.length() - 1];
+    cout << last << endl;
+
     return 0;
 }
 
