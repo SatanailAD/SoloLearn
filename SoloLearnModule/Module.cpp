@@ -2,16 +2,26 @@
 #include <string>
 using namespace std;
 
-//Дана строка. Выведите в консоль последний символ строки.
+//Даны два слова. Проверьте, что первые буквы этих слов совпадают.
 
 int main() {
     
-    string task;
-    cout << "Enter ur message: ";
-    cin >> task;
-    cout << task.length() << endl;
-    char last = task[task.length() - 1];
-    cout << last << endl;
+    setlocale(LC_ALL, "Rus");
+    string wordOne, wordTwo;
+    cout << "Enter ur wordOne: ";
+    cin >> wordOne;
+    cout << "Enter ur wordTwo: ";
+    cin >> wordTwo;
+    char firstOne = wordOne[0];
+    char firstTwo = wordTwo[0];
+    if (firstOne == firstTwo)
+    {
+        cout << "Первые символы равны";
+    }
+    else
+    {
+            cout << "Первые символы НЕ равны";  
+    }
 
     return 0;
 }
