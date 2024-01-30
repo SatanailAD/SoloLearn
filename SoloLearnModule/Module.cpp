@@ -2,25 +2,23 @@
 #include <string>
 using namespace std;
 
-//Даны два слова. Проверьте, что первые буквы этих слов совпадают.
+//Дано слово. Получите его последнюю букву. Если слово заканчивается на мягкий знак, то получите предпоследнюю букву.
 
 int main() {
     
     setlocale(LC_ALL, "Rus");
-    string wordOne, wordTwo;
-    cout << "Enter ur wordOne: ";
-    getline(cin, wordOne);
-    cout << "Enter ur wordTwo: ";
-    getline(cin, wordTwo);
-    char firstOne = wordOne[0];
-    char firstTwo = wordTwo[0];
-    if (firstOne == firstTwo)
+    string word;
+    cout << "Enter ur word: ";
+    getline(cin, word);
+    char last = word[word.length() - 1];
+
+    if (last=='m')
     {
-        cout << "Первые символы равны";
+        cout << word[word.length() - 2];
     }
     else
     {
-            cout << "Первые символы НЕ равны";  
+        cout << last;
     }
 
     return 0;
