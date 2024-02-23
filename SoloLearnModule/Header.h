@@ -2,7 +2,7 @@
 
 class MyClass {
 	public:
-		MyClass();
+		void myPrint() const;
 	private:
 	protected:
 

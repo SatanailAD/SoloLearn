@@ -3,12 +3,13 @@
 #include <string>
 using namespace std;
 
-MyClass::MyClass()
+void MyClass::myPrint() const
 {
-	cout << "Hello";
+	cout << "Hello const";
 }
 
 int main() {
 	setlocale(LC_ALL, "Rus");
-	MyClass q;
+	const MyClass q;
+	q.myPrint();
 }
